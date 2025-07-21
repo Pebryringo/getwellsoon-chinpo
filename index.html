@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Get Well Soon - Chindhi Elisabeth Manullang</title>
   <style>
-    /* Reset sederhana */
     * {
       margin: 0;
       padding: 0;
@@ -80,7 +79,6 @@
       background-color: #ff4081;
     }
 
-    /* Animasi */
     @keyframes fadeInScale {
       0% {
         opacity: 0;
@@ -126,7 +124,7 @@
 <body>
   <div class="container">
     <img
-      src="https://media.tenor.com/WFKnZPoy5ZIAAAAC/couple-caring.gif"
+      src="https://media.giphy.com/media/JdFEeta44KpXy/giphy.gif"
       alt="Pasangan merawat pacarnya yang sakit"
       class="animated-image"
     />
@@ -151,24 +149,17 @@
 
     btn.addEventListener('click', () => {
       if (music.paused) {
-        music.play();
-        btn.textContent = '⏸️ Pause Music';
-        btn.setAttribute('aria-label', 'Pause Music');
+        music.play().then(() => {
+          btn.textContent = '⏸️ Pause Music';
+          btn.setAttribute('aria-label', 'Pause Music');
+        }).catch(() => {
+          alert("Klik lagi untuk memutar musik. Browser memblokir autoplay.");
+        });
       } else {
         music.pause();
         btn.textContent = '▶️ Play Music';
         btn.setAttribute('aria-label', 'Play Music');
       }
-    });
-
-    // Autoplay ketika load (jika diizinkan browser)
-    window.addEventListener('load', () => {
-      music.play().then(() => {
-        btn.textContent = '⏸️ Pause Music';
-        btn.setAttribute('aria-label', 'Pause Music');
-      }).catch(() => {
-        // Autoplay diblokir, tombol tetap Play
-      });
     });
   </script>
 </body>
