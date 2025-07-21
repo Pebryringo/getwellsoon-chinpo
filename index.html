@@ -62,23 +62,6 @@
       animation: slideUpFade 2s ease forwards 1s;
     }
 
-    button#btn-play-pause {
-      margin-top: 2rem;
-      padding: 0.6rem 1.4rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      background-color: #ff6f91;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button#btn-play-pause:hover {
-      background-color: #ff4081;
-    }
-
     @keyframes fadeInScale {
       0% {
         opacity: 0;
@@ -124,43 +107,15 @@
 <body>
   <div class="container">
     <img
-  src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTc4cHc0b3N4NmdhMm8yNzc5ZTFnZnRwZzVqZHF1MzUxMWtjMDV5YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SA0cqHT6EzOHvrVJ0I/giphy.gif"
-  alt="Pasangan merawat"
-  class="animated-image"
-/>
+      src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTc4cHc0b3N4NmdhMm8yNzc5ZTFnZnRwZzVqZHF1MzUxMWtjMDV5YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SA0cqHT6EzOHvrVJ0I/giphy.gif"
+      alt="Pasangan merawat"
+      class="animated-image"
+    />
     <h1 class="message">
       Get Well Soon<br />
       <span class="name">Chindhi Elisabeth Manullang (Chinpo)</span>
     </h1>
     <p class="wish">Semoga cepat sembuh dan selalu sehat!</p>
-
-    <!-- Kontrol musik -->
-    <button id="btn-play-pause" aria-label="Play Music">▶️ Play Music</button>
   </div>
-
-  <audio id="bg-music" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2023/05/19/audio_4dd5c163de.mp3?filename=bright-ambient-11387.mp3" type="audio/mpeg" />
-    Browser kamu tidak mendukung audio.
-  </audio>
-
-  <script>
-    const music = document.getElementById('bg-music');
-    const btn = document.getElementById('btn-play-pause');
-
-    btn.addEventListener('click', () => {
-      if (music.paused) {
-        music.play().then(() => {
-          btn.textContent = '⏸️ Pause Music';
-          btn.setAttribute('aria-label', 'Pause Music');
-        }).catch(() => {
-          alert("Klik lagi untuk memutar musik. Browser memblokir autoplay.");
-        });
-      } else {
-        music.pause();
-        btn.textContent = '▶️ Play Music';
-        btn.setAttribute('aria-label', 'Play Music');
-      }
-    });
-  </script>
 </body>
 </html>
