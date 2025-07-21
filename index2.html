@@ -32,14 +32,6 @@
       animation: fadeInScale 1.2s ease forwards;
     }
 
-    .animated-image {
-      width: 100%;
-      max-width: 300px;
-      margin-bottom: 1.5rem;
-      border-radius: 15px;
-      animation: fadeInScale 1.5s ease-in-out;
-    }
-
     .message {
       font-size: 2.4rem;
       font-weight: 700;
@@ -125,11 +117,6 @@
 </head>
 <body>
   <div class="container">
-    <img
-      src="https://media.tenor.com/WFKnZPoy5ZIAAAAC/couple-caring.gif"
-      alt="Pasangan merawat pacarnya yang sakit"
-      class="animated-image"
-    />
     <h1 class="message">
       Get Well Soon<br />
       <span class="name">Chindhi Elisabeth Manullang (Chinpo)</span>
@@ -161,13 +148,13 @@
       }
     });
 
-    // Autoplay ketika load (jika diizinkan browser)
+    // Jika ingin autoplay desktop tapi tetap bisa pause/play manual:
     window.addEventListener('load', () => {
       music.play().then(() => {
         btn.textContent = '⏸️ Pause Music';
         btn.setAttribute('aria-label', 'Pause Music');
       }).catch(() => {
-        // Autoplay diblokir, tombol tetap Play
+        // Autoplay diblokir, tombol tetap "Play Music"
       });
     });
   </script>
